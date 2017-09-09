@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="LayoutPadrao">
+
+<section layout:fragment="conteudo">
+	<div layout:include="MensagemGeral"></div>
+
+	<form class="form-horizontal" method="POST" th:action="@{/brands}"
+		th:object="${brand}">
+		<div layout:include = "MessagemErro"></div>
+		
+	
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="clearfix">
+					<h1 class="panel-title aw-titulo-panel">New Brand</h1>
+					<a class="btn btn-link aw-link-panel" th:href="@{/brands}">Voltar
+						para pesquisa</a>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<input type="hidden" th:field="*{idBrand}" />
+
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('nome')} ? has-error">
+					<label for="nome" class="col-sm-2 control-label">Nome</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="nome"
+							th:field="*{nome}" />
+					</div>
+				</div>
+
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('ramo_atividade')} ? has-error">
+					<label for="ramo_atividade" class="col-sm-2 control-label">Ramo de atividade</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="ramo_atividade"
+							th:field="*{ramo_atividade}" />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</section>
+</html>

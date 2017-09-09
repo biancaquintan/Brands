@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.algaworks.brands.model.Festa;
-import com.algaworks.brands.repository.Festas;
+import com.algaworks.brands.model.Product;
+import com.algaworks.brands.repository.Products;
 
 @Controller
 @RequestMapping("/products")
