@@ -15,7 +15,7 @@
 			<div class="panel-heading">
 				<div class="clearfix">
 					<h1 class="panel-title aw-titulo-panel">New Product</h1>
-					<a class="btn btn-link aw-link-panel" th:href="@{/products}">Back</a>
+					<a class="btn btn-secondary" th:href="@{/products}">Back</a>
 				</div>
 			</div>
 
@@ -35,7 +35,7 @@
 
 				<div class="form-group"
 					th:classappend="${#fields.hasErrors('descricao')} ? has-error">
-					<label for="descricao" class="col-sm-2 control-label">Nome</label>
+					<label for="descricao" class="col-sm-2 control-label">Description</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" id="descricao"
 							th:field="*{descricao}" />
@@ -44,7 +44,7 @@
 
 			    <div class="form-group"
 					th:classappend="${#fields.hasErrors('valor')} ? has-error">
-					<label for="compositor" class="col-sm-2 control-label">Valor</label>
+					<label for="compositor" class="col-sm-2 control-label">Price</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" id="valor"
 							th:field="*{valor}" />
@@ -53,7 +53,7 @@
 				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-primary">Save</button>
+						<button type="submit" class="btn btn-success">Save</button>
 					</div>
 				</div>
 			</div>

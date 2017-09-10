@@ -14,8 +14,8 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<div class="clearfix">
-					<h1 class="panel-title aw-titulo-panel">New Brand</h1>
-					<a class="btn btn-link aw-link-panel" th:href="@{/brands}">Back</a>
+					<h1 style="text-align: center; font-size: 32px" class="panel-title aw-titulo-panel">New Brand</h1>
+					<a class="btn btn-primary" th:href="@{/brands}">Back</a>
 				</div>
 			</div>
 
@@ -24,7 +24,7 @@
 
 				<div class="form-group"
 					th:classappend="${#fields.hasErrors('nome_marca')} ? has-error">
-					<label for="nome_marca" class="col-sm-2 control-label">Nome</label>
+					<label  for="nome_marca" class="col-sm-2 control-label">Name</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" id="nome_marca"
 							th:field="*{nome_marca}" />
@@ -33,7 +33,7 @@
 
 				<div class="form-group"
 					th:classappend="${#fields.hasErrors('ramo_atividade')} ? has-error">
-					<label for="ramo_atividade" class="col-sm-2 control-label">Ramo de atividade</label>
+					<label for="ramo_atividade" class="col-sm-2 control-label">Branch</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" id="ramo_atividade"
 							th:field="*{ramo_atividade}" />
@@ -42,7 +42,7 @@
 				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-primary">Save</button>
+						<button type="submit" class="btn btn-success">Save</button>
 					</div>
 				</div>
 			</div>
