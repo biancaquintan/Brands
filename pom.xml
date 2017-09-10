@@ -3,12 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.algaworks.gestaofesta</groupId>
-	<artifactId>gestao-festa</artifactId>
+	<groupId>com.algaworks.brands</groupId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>gestao-festa</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -96,4 +94,6 @@
 	</build>
 
 
+	<name>brands</name>
+	<artifactId>brands</artifactId>
 </project>

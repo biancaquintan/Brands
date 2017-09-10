@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -13,26 +12,25 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Product {
 	@Id
 	@GeneratedValue
-	private Long idProduct;
+	private Long id_product;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_brand")
-	@NotNull(message="Marca obrigatória!")
+	@NotNull(message = "Campo obrigatório!")
 	private Brand brand;
 	
-	@NotEmpty(message="Descrição obrigatória!")
+	@NotEmpty(message = "Campo obrigatório!")
 	private String descricao;
+	
+	@NotEmpty(message = "Campo obrigatório!")
+	private Float valor;
 
-	@NotNull(message = "Valor é obrigatório")
-	@DecimalMin(value = "0.01", message = "Valor não pode ser menor que 0,01")
-	private float valor;
-
-	public Long getIdProduct() {
-		return idProduct;
+	public Long getId_product() {
+		return id_product;
 	}
 
-	public void setIdProduct(Long idProduct) {
-		this.idProduct = idProduct;
+	public void setId_product(Long id_product) {
+		this.id_product = id_product;
 	}
 
 	public Brand getBrand() {
@@ -51,11 +49,11 @@ public class Product {
 		this.descricao = descricao;
 	}
 
-	public float getValor() {
+	public Float getValor() {
 		return valor;
 	}
 
-	public void setValor(float valor) {
+	public void setValor(Float valor) {
 		this.valor = valor;
 	}
 }

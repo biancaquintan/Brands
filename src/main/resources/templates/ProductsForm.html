@@ -10,49 +10,50 @@
 	<form class="form-horizontal" method="POST" th:action="@{/products}"
 		th:object="${product}">
 		<div layout:include = "MessagemErro"></div>
-		
 	
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<div class="clearfix">
 					<h1 class="panel-title aw-titulo-panel">New Product</h1>
-					<a class="btn btn-link aw-link-panel" th:href="@{/products}">Voltar
-						para pesquisa</a>
+					<a class="btn btn-link aw-link-panel" th:href="@{/products}">Back</a>
 				</div>
 			</div>
 
 			<div class="panel-body">
 				<input type="hidden" th:field="*{idProduct}" />
-
 				<div class="form-group"
-					th:classappend="${#fields.hasErrors('product')} ? has-error">
-					<label for="product" class="col-sm-2 control-label">Brand</label>
+					th:classappend="${#fields.hasErrors('brand')} ? has-error">
+					<label for="brand" class="col-sm-2 control-label">Brand</label>
 					<div class="col-sm-2">
-						<input type="text" class="form-control" id="brand.nome"
+					    <!-- <select class="form-control" name="brand">
+					    	<option th:each="brand : ${brands}" th:value="${brand}" th:text="${brand.nome_marca}" ></option>
+					    </select> -->
+						<input type="text" class="form-control" id="brand.nome_marca"
 							th:field="*{brand}" />
 					</div>
 				</div>
 
 				<div class="form-group"
-					th:classappend="${#fields.hasErrors('nome')} ? has-error">
-					<label for="nome" class="col-sm-2 control-label">Produto</label>
+					th:classappend="${#fields.hasErrors('descricao')} ? has-error">
+					<label for="descricao" class="col-sm-2 control-label">Nome</label>
 					<div class="col-sm-2">
-						<input type="text" class="form-control" id="nome"
-							th:field="*{nome}" />
+						<input type="text" class="form-control" id="descricao"
+							th:field="*{descricao}" />
 					</div>
 				</div>
 
-				<div class="form-group"
+			    <div class="form-group"
 					th:classappend="${#fields.hasErrors('valor')} ? has-error">
-					<label for="valor" class="col-sm-2 control-label">Valor</label>
+					<label for="compositor" class="col-sm-2 control-label">Valor</label>
 					<div class="col-sm-2">
-						
-						<input type="text" class="form-control js-currency" id="valor" th:field="*{valor}" />
+						<input type="text" class="form-control" id="valor"
+							th:field="*{valor}" />
 					</div>
 				</div>
+				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-primary">Salvar</button>
+						<button type="submit" class="btn btn-primary">Save</button>
 					</div>
 				</div>
 			</div>

@@ -11,13 +11,11 @@
 		th:object="${brand}">
 		<div layout:include = "MessagemErro"></div>
 		
-	
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<div class="clearfix">
 					<h1 class="panel-title aw-titulo-panel">New Brand</h1>
-					<a class="btn btn-link aw-link-panel" th:href="@{/brands}">Voltar
-						para pesquisa</a>
+					<a class="btn btn-link aw-link-panel" th:href="@{/brands}">Back</a>
 				</div>
 			</div>
 
@@ -25,11 +23,11 @@
 				<input type="hidden" th:field="*{idBrand}" />
 
 				<div class="form-group"
-					th:classappend="${#fields.hasErrors('nome')} ? has-error">
-					<label for="nome" class="col-sm-2 control-label">Nome</label>
+					th:classappend="${#fields.hasErrors('nome_marca')} ? has-error">
+					<label for="nome_marca" class="col-sm-2 control-label">Nome</label>
 					<div class="col-sm-2">
-						<input type="text" class="form-control" id="nome"
-							th:field="*{nome}" />
+						<input type="text" class="form-control" id="nome_marca"
+							th:field="*{nome_marca}" />
 					</div>
 				</div>
 
@@ -44,7 +42,7 @@
 				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-primary">Salvar</button>
+						<button type="submit" class="btn btn-primary">Save</button>
 					</div>
 				</div>
 			</div>

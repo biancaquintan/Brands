@@ -12,27 +12,30 @@
 			<a class="btn btn-link aw-link-panel" th:href="@{/products/novo}">New Product</a>
 		</div>
 	<div class="panel-body">
+	<!-- <input type="hidden" id= "csrf-token" th:name="${_csrf.parameterName}" th:content="${_csrf.token}" /> -->
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Nome Brand</th>
-					<th>Product</th>
+					<th>Brand</th>
+					<th>Descrição</th>
 					<th>Valor</th>
 					<th colspan ="2"> Ação </th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="product : ${products}">
-					<td th:text="${product.brand.nome}">xxx</td>
-					<td th:text="${product.descricao}">xxxxxx</td>
-					<td th:text="${product.valor}">xxx.xx</td>
-					<td><a th:href="@{/products/alterar/}+${product.idProduct}" class="glyphicon glyphicon-pencil"></a></td>
+					<td th:text="${product.brand.nome_marca}">xxxxxxxx</td>
+					<td th:text="${product.descricao}">xxxxxxxxx</td>
+					<td th:text="${product.valor}">xx.xx</td>			
+					<td><a th:href="@{/products/{idProduct}(idProduct=${product.idProduct})}" class="glyphicon glyphicon-pencil"></a></td>
+					
 					<td><a class="btn btn-link btn-xs" data-toggle="modal"
 						data-target="#confirmacaoExclusaoModal"
-						th:attr="data-codigo=${product.idProduct}, data-descricao=${product.nome}, data-model='product' "
-						title="Excluir" rel="tooltip" data-placement="top"> <span
-						class="glyphicon glyphicon-remove"></span>
-						</a></td>
+						th:attr="data-codigo=${product.idProduct}, data-descricao=${product.descricao}, data-model='product'"
+						title="Excluir" rel="tooltip" data-placement="top"> 
+						  <span class="glyphicon glyphicon-remove"></span>
+						</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>
