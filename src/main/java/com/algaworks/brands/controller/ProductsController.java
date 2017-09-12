@@ -23,8 +23,7 @@ import com.algaworks.brands.repository.Products;
 @RequestMapping("/products")
 public class ProductsController {
 	@Autowired
-	private Products products;
-	private Brands brands;
+	private Products products;	
 	
 	@GetMapping("")
 	public ModelAndView listar() {
@@ -72,7 +71,7 @@ public class ProductsController {
 		return mv;
 	}
 	
-	@RequestMapping(value="{/products/idProduct}", method = RequestMethod.DELETE)
+	@RequestMapping(value="{idProduct}", method = RequestMethod.DELETE)
 	public String excluir(@PathVariable Long idProduct, RedirectAttributes attributes) {
 		products.delete(idProduct);
 		attributes.addFlashAttribute("mensagem", "Excluído com sucesso!");
