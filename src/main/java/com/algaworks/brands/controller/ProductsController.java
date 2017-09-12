@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.algaworks.brands.model.Product;
+import com.algaworks.brands.repository.Brands;
 import com.algaworks.brands.repository.Products;
 
 @Controller
@@ -23,7 +24,7 @@ import com.algaworks.brands.repository.Products;
 public class ProductsController {
 	@Autowired
 	private Products products;
-	//private Brands brands;
+	private Brands brands;
 	
 	@GetMapping("")
 	public ModelAndView listar() {
